@@ -1,0 +1,12 @@
+{
+  "name": "lawyer-landing-page",
+  "version": "1.0.0",
+  "description": "Professional landing page for a self-employed lawyer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
