@@ -10,29 +10,52 @@
         body { font-family: 'Inter', 'Assistant', sans-serif; }
         h1, h2, h3 { font-family: 'Playfair Display', 'Assistant', serif; }
         .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
-        .accent-border { border-left: 4px solid #c5a059; }
-        [dir="rtl"] .accent-border { border-left: 0; border-right: 4px solid #c5a059; }
-        .bg-gold { background-color: #c5a059; }
-        .text-gold { color: #c5a059; }
+        .accent-border { border-left: 4px solid #b38b3f; } /* Darker gold for contrast */
+        [dir="rtl"] .accent-border { border-left: 0; border-right: 4px solid #b38b3f; }
+        .bg-gold { background-color: #b38b3f; } /* WCAG AA compliant gold */
+        .text-gold { color: #b38b3f; } /* WCAG AA compliant gold */
+        
+        /* Accessibility Focus States */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 3px solid #b38b3f;
+            outline-offset: 2px;
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #b38b3f;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-900">
+    <a href="#main-content" class="skip-link" data-t="skip_to_content">Skip to content</a>
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter" data-t="brand_name">ALON<span class="text-gold">PARDO</span></div>
+            <div class="text-2xl font-bold tracking-tighter" data-t="brand_name" aria-hidden="true">ALON<span class="text-gold">PARDO</span></div>
             <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest rtl:space-x-reverse">
                 <a href="#expertise" class="hover:text-gold transition" data-t="nav_expertise">Expertise</a>
                 <a href="#about" class="hover:text-gold transition" data-t="nav_philosophy">Philosophy</a>
                 <a href="#contact" class="hover:text-gold transition" data-t="nav_consultation">Consultation</a>
             </div>
             <div class="flex items-center gap-6">
-                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition">HE</button>
+                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition" aria-label="Switch Language / החלף שפה">HE</button>
                 <a href="#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" data-t="nav_get_in_touch">Get in Touch</a>
             </div>
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 hero-gradient text-white overflow-hidden">
         <div class="absolute right-0 top-0 w-1/3 h-full bg-stone-800/20 skew-x-12 transform translate-x-1/2"></div>
@@ -140,16 +163,16 @@
             <p class="text-stone-400 mb-12" data-t="contact_subtitle">Immediate response for urgent matters. Your first step towards a resolution begins with a conversation.</p>
             <form class="grid md:grid-cols-2 gap-6 text-left rtl:text-right">
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_name">Full Name</label>
-                    <input type="text" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
+                    <label for="full-name" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_email">Email Address</label>
-                    <input type="email" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
+                    <label for="email-address" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_email">Email Address</label>
+                    <input type="email" id="email-address" name="email-address" required class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
                 </div>
                 <div class="md:col-span-2">
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type</label>
-                    <select class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none">
+                    <label for="case-type" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type</label>
+                    <select id="case-type" name="case-type" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none">
                         <option data-t="opt_criminal">Criminal Law</option>
                         <option data-t="opt_transport">Transport Law</option>
                         <option data-t="opt_admin">Administrative Law</option>
@@ -159,10 +182,10 @@
                     </select>
                 </div>
                 <div class="md:col-span-2">
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_message">Message Summary</label>
-                    <textarea rows="4" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition"></textarea>
+                    <label for="message-summary" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_message">Message Summary</label>
+                    <textarea id="message-summary" name="message-summary" rows="4" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition"></textarea>
                 </div>
-                <button class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition" data-t="form_submit">Submit Consultation Request</button>
+                <button type="submit" class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition" data-t="form_submit">Submit Consultation Request</button>
             </form>
         </div>
     </section>
@@ -229,7 +252,8 @@
                 brand_name: "ALON<span class=\"text-gold\">PARDO</span>",
                 footer_copy: "&copy; 2026 Alon Pardo. All rights reserved.",
                 footer_privacy: "Privacy Policy",
-                footer_legal: "Legal Notice"
+                footer_legal: "Legal Notice",
+                skip_to_content: "Skip to content"
             },
             he: {
                 nav_expertise: "תחומי התמחות",
@@ -275,7 +299,8 @@
                 brand_name: "אלון<span class=\"text-gold\">פרדו</span>",
                 footer_copy: "&copy; 2026 אלון פרדו. כל הזכויות שמורות.",
                 footer_privacy: "מדיניות פרטיות",
-                footer_legal: "הודעה משפטית"
+                footer_legal: "הודעה משפטית",
+                skip_to_content: "דלג לתוכן המרכזי"
             }
         };
 
