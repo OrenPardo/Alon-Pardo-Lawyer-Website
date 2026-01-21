@@ -334,6 +334,8 @@
 
             // Apply specific text sizes based on language
             const navLinks = document.querySelectorAll('nav a[data-t]');
+            const brandNames = document.querySelectorAll('[data-t="brand_name"]');
+            
             navLinks.forEach(link => {
                 if (currentLang === 'he') {
                     link.classList.remove('text-sm');
@@ -341,6 +343,21 @@
                 } else {
                     link.classList.remove('text-[1.10rem]');
                     link.classList.add('text-sm');
+                }
+            });
+
+            brandNames.forEach(brand => {
+                if (currentLang === 'he') {
+                    brand.classList.remove('text-2xl', 'text-xl');
+                    brand.classList.add('text-[2.0rem]');
+                } else {
+                    brand.classList.remove('text-[2.0rem]');
+                    // Restore original header/footer sizes
+                    if (brand.tagName.toLowerCase() === 'button' && brand.closest('nav')) {
+                        brand.classList.add('text-2xl');
+                    } else {
+                        brand.classList.add('text-xl');
+                    }
                 }
             });
 
