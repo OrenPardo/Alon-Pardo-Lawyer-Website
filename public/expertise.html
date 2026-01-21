@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="he" id="html-tag" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise | Alon Pardo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Assistant', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', 'Assistant', serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
+        .text-gold { color: #926d27; }
+        .bg-gold { background-color: #926d27; }
+        .expertise-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .expertise-bg svg {
+            width: 80vh;
+            height: 80vh;
+        }
+        /* Header Navigation Hover Effect */
+        nav a:not(.bg-stone-900) {
+            position: relative;
+            text-decoration: none;
+        }
+        nav a:not(.bg-stone-900)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #926d27;
+            transition: width 0.3s ease;
+        }
+        [dir="rtl"] nav a:not(.bg-stone-900)::after {
+            left: auto;
+            right: 0;
+        }
+        nav a:not(.bg-stone-900):hover::after {
+            width: 100%;
+        }
+        nav a:not(.bg-stone-900):hover {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900">
+    <div id="expertise-background" class="expertise-bg text-gold"></div>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-tighter hover:text-gold transition rtl:text-right" id="brand-link">ALON <span class="text-gold">PARDO</span></a>
+            <div class="flex items-center gap-6">
+                <a href="/" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition" id="back-link">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-48 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12 rtl:text-right" id="expertise-header">
+                <div id="icon-container" class="mb-6 text-gold"></div>
+                <h1 id="expertise-title" class="text-5xl md:text-7xl mb-6"></h1>
+                <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mt-16 rtl:text-right">
+                <div class="border-t-2 border-gold pt-8">
+                    <h2 class="text-2xl font-bold mb-4 uppercase tracking-widest text-stone-400" id="services-label">Professional Services</h2>
+                    <ul class="space-y-4 text-stone-600" id="services-list">
+                        <!-- Injected via JS -->
+                    </ul>
+                </div>
+                <div class="bg-stone-900 text-white p-8 rounded-sm">
+                    <h3 class="text-xl mb-4" id="cta-title">Need Legal Advice?</h3>
+                    <p class="text-stone-400 mb-6 text-sm" id="cta-desc">Schedule a confidential consultation to discuss your specific case requirements.</p>
+                    <a href="/#contact" class="inline-block bg-gold text-stone-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-white transition w-full text-center" id="cta-button">Contact Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const content = {
+            en: {
+                back: "Back to Home",
+                services_label: "Professional Services",
+                cta_title: "Need Legal Advice?",
+                cta_desc: "Schedule a confidential consultation to discuss your specific case requirements.",
+                cta_button: "Contact Now",
+                brand: 'ALON <span class="text-gold">PARDO</span>'
+            },
+            he: {
+                back: "חזרה לדף הבית",
+                services_label: "שירותים מקצועיים",
+                cta_title: "זקוק לייעוץ משפטי?",
+                cta_desc: "קבע ייעוץ חסוי לדיון בדרישות המקרה הספציפיות שלך.",
+                cta_button: "צור קשר עכשיו",
+                brand: 'אלון <span class="text-gold">פרדו</span>'
+            }
+        };
+
+        const pages = {
+            criminal: {
+                title: { en: "Criminal Law", he: "משפט פלילי" },
+                desc: { 
+                    en: "Robust defense strategies for individuals and businesses facing criminal allegations. We provide comprehensive representation through all stages of the criminal process.", 
+                    he: "אסטרטגיות הגנה חזקות ליחידים ועסקים העומדים בפני אישומים פליליים. אנו מספקים ייצוג מקיף לאורך כל שלבי ההליך הפלילי." 
+                },
+                services: {
+                    en: ["White Collar Defense", "Felony & Misdemeanor", "Appeals & Post-Conviction", "Police Investigation Support"],
+                    he: ["עבירות צווארון לבן", "פשעים ועוונות", "ערעורים לאחר הרשעה", "ליווי בחקירות משטרה"]
+                },
+                icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>`
+            },
+            transport: {
+                title: { en: "Transport Law", he: "דיני תעבורה" },
+                desc: { 
+                    en: "Expert handling of traffic violations, licensing issues, and logistics regulations. Protecting your right to drive and operate in the transport sector.", 
+                    he: "טיפול מומחה בעבירות תעבורה, בעיות רישוי ותקנות לוגיסטיקה. הגנה על זכותכם לנהוג ולפעול במגזר התחבורה." 
+                },
+                services: {
+                    en: ["DUI Defense", "License Restoration", "Commercial Vehicle Regs", "Traffic Ticket Appeals"],
+                    he: ["הגנה בעבירות שכרות", "החזרת רישיון נהיגה", "רגולציה לרכב מסחרי", "ערעורי דוחות תנועה"]
+                },
+                icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`
+            },
+            admin: {
+                title: { en: "Administrative Law", he: "משפט מנהלי" },
+                desc: { 
+                    en: "Representing clients in disputes against government bodies and public authorities. Ensuring fair treatment and regulatory compliance.", 
+                    he: "ייצוג לקוחות בסכסוכים מול גופים ממשלתיים ורשויות ציבוריות. הבטחת יחס הוגן ועמידה ברגולציה." 
+                },
+                services: {
+                    en: ["Public Tenders", "Regulatory Appeals", "Zoning & Planning", "Government Contracts"],
+                    he: ["מכרזים ציבוריים", "ערעורים רגולטוריים", "תכנון ובנייה", "חוזים ממשלתיים"]
+                },
+                icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`
+            },
+            labour: {
+                title: { en: "Labour Law", he: "דיני עבודה" },
+                desc: { 
+                    en: "Comprehensive legal support for employment relationships, workplace disputes, and collective bargaining agreements.", 
+                    he: "תמיכה משפטית מקיפה ביחסי עבודה, סכסוכים במקום העבודה והסכמים קיבוציים." 
+                },
+                services: {
+                    en: ["Wrongful Termination", "Severance Disputes", "Contract Negotiation", "Workplace Discrimination"],
+                    he: ["פיטורין שלא כדין", "סכסוכי פיצויי פיטורין", "משא ומתן על חוזים", "אפליה במקום העבודה"]
+                },
+                icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`
+            },
+            accessibility: {
+                title: { en: "Accessibility Law", he: "דיני נגישות" },
+                desc: { 
+                    en: "Leading advocacy for accessibility rights and compliance with national and international standards. Ensuring equality in all spaces.", 
+                    he: "הובלת ייצוג לזכויות נגישות ועמידה בתקנים לאומיים ובינלאומיים. הבטחת שוויון בכל המרחבים." 
+                },
+                services: {
+                    en: ["Website Accessibility", "Physical Space Audits", "Discrimination Claims", "Policy Development"],
+                    he: ["נגישות אתרי אינטרנט", "ביקורת מרחב פיזי", "תביעות אפליה", "פיתוח מדיניות"]
+                },
+                icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type') || 'criminal';
+        const lang = urlParams.get('lang') || 'he';
+        const page = pages[type];
+
+        if (page) {
+            document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            
+            document.getElementById('brand-link').innerHTML = content[lang].brand;
+            document.getElementById('back-link').textContent = content[lang].back;
+            document.getElementById('services-label').textContent = content[lang].services_label;
+            document.getElementById('cta-title').textContent = content[lang].cta_title;
+            document.getElementById('cta-desc').textContent = content[lang].cta_desc;
+            document.getElementById('cta-button').textContent = content[lang].cta_button;
+            document.getElementById('cta-button').href = `/${lang === 'en' ? '' : '#contact'}`;
+
+            document.getElementById('expertise-title').textContent = page.title[lang];
+            document.getElementById('expertise-desc').textContent = page.desc[lang];
+            document.getElementById('icon-container').innerHTML = page.icon.replace('<svg', '<svg class="w-16 h-16"');
+            document.getElementById('expertise-background').innerHTML = page.icon;
+
+            const list = document.getElementById('services-list');
+            page.services[lang].forEach(service => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-3';
+                li.innerHTML = `<span class="w-1.5 h-1.5 bg-gold rounded-full"></span><span>${service}</span>`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
