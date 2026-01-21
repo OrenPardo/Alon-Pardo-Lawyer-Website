@@ -199,11 +199,12 @@
             document.getElementById('back-link').textContent = content[lang].back;
             document.getElementById('back-link').href = `/${lang === 'en' ? '?lang=en' : ''}`;
             document.getElementById('nav-contact-button').textContent = content[lang].cta_button_nav;
+            document.getElementById('nav-contact-button').href = `/${lang === 'en' ? '?lang=en' : ''}#contact`;
             document.getElementById('services-label').textContent = content[lang].services_label;
             document.getElementById('cta-title').textContent = content[lang].cta_title;
             document.getElementById('cta-desc').textContent = content[lang].cta_desc;
             document.getElementById('cta-button-secondary').textContent = content[lang].cta_button_sec;
-            document.getElementById('cta-button-secondary').href = `/${lang === 'he' ? '' : '?lang=en'}#contact`;
+            document.getElementById('cta-button-secondary').href = `/${lang === 'en' ? '?lang=en' : ''}#contact`;
 
             document.getElementById('expertise-title').textContent = page.title[lang];
             document.getElementById('expertise-desc').textContent = page.desc[lang];
