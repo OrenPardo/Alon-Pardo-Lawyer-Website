@@ -204,7 +204,7 @@
                 <div class="md:col-span-2 relative">
                     <label for="case-type" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type</label>
                     <div class="relative">
-                        <select id="case-type" name="case-type" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer" onfocus="this.parentElement.classList.add('select-open')" onblur="this.parentElement.classList.remove('select-open')">
+                        <select id="case-type" name="case-type" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer" onfocus="this.parentElement.classList.add('select-open')" onblur="this.parentElement.classList.remove('select-open')" onchange="this.blur()">
                             <option data-t="opt_criminal">Criminal Law</option>
                             <option data-t="opt_transport">Transport Law</option>
                             <option data-t="opt_admin">Administrative Law</option>
