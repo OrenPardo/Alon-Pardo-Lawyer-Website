@@ -435,6 +435,16 @@
                 heroTitle.classList.add('text-5xl', 'md:text-7xl', 'leading-tight');
             }
 
+            // Eyebrow specific size for Hebrew
+            const heroSubtitle = document.querySelector('[data-t="hero_subtitle"]');
+            if (currentLang === 'he') {
+                heroSubtitle.classList.remove('text-sm', 'mb-4');
+                heroSubtitle.classList.add('text-[1.1rem]', 'mb-2');
+            } else {
+                heroSubtitle.classList.remove('text-[1.1rem]', 'mb-2');
+                heroSubtitle.classList.add('text-sm', 'mb-4');
+            }
+
             // Footer specific text sizes for Hebrew
             const footerCopyText = document.querySelector('#footer-copy-wrapper');
             const footerLegalLinks = document.querySelectorAll('#footer-actions-wrapper .text-xs');
