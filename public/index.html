@@ -307,7 +307,7 @@
                 &copy; 2026 אלון פרדו. כל הזכויות שמורות.
             </div>
             <div id="footer-actions-wrapper" class="flex flex-col md:flex-row items-center gap-8 order-1 md:order-2 rtl:order-1">
-                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition focus:outline-none" data-t="brand_name" aria-label="Back to top">אלון <span class="text-gold">פרדו</span></button>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition focus:outline-none whitespace-nowrap" data-t="brand_name" aria-label="Back to top">אלון <span class="text-gold">פרדו</span></button>
                 <div class="text-xs uppercase tracking-widest space-x-6 rtl:space-x-reverse flex flex-wrap justify-center md:justify-end items-center gap-y-2">
                     <a href="/privacy" class="hover:text-white transition" data-t="footer_privacy">Privacy Policy</a>
                     <a href="/terms" class="hover:text-white transition" data-t="footer_terms">Terms of Use</a>
@@ -634,6 +634,8 @@
             const footerCopy = document.getElementById('footer-copy-wrapper');
             const footerActions = document.getElementById('footer-actions-wrapper');
 
+            const footerLinksDiv = footerActions.querySelector('.text-xs');
+            
             if (currentLang === 'en') {
                 footerContainer.classList.remove('justify-between');
                 footerContainer.classList.add('justify-start');
@@ -641,6 +643,10 @@
                 footerActions.classList.add('md:order-1');
                 footerCopy.classList.remove('md:order-1');
                 footerCopy.classList.add('md:order-2', 'md:ml-auto');
+                if (footerLinksDiv) {
+                    footerLinksDiv.classList.remove('md:justify-end');
+                    footerLinksDiv.classList.add('md:justify-start');
+                }
             } else {
                 footerContainer.classList.remove('justify-start');
                 footerContainer.classList.add('justify-between');
@@ -648,6 +654,10 @@
                 footerActions.classList.add('md:order-2');
                 footerCopy.classList.remove('md:order-2', 'md:ml-auto');
                 footerCopy.classList.add('md:order-1');
+                if (footerLinksDiv) {
+                    footerLinksDiv.classList.remove('md:justify-start');
+                    footerLinksDiv.classList.add('md:justify-end');
+                }
             }
         }
 
