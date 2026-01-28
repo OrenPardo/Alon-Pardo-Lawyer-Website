@@ -493,7 +493,7 @@
                     const baseUrl = href.split('?')[0].split('#')[0];
                     const hash = href.includes('#') ? '#' + href.split('#')[1] : '';
                     
-                    if (baseUrl.endsWith('.html') || baseUrl === '/') {
+                    if (baseUrl.endsWith('.html') || baseUrl === '/' || baseUrl.startsWith('/practice/')) {
                         const url = new URL(link.href, window.location.origin);
                         if (currentLang === 'en') {
                             url.searchParams.set('lang', 'en');
