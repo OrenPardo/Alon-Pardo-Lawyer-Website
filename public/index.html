@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" id="html-tag">
+<html lang="he" dir="rtl" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alon Pardo | Attorney</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title id="page-title">אלון פרדו | עורך דין</title>
+    <meta name="description" id="meta-description" content="עו&quot;ד אלון פרדו - ייצוג אישי בתחומי המשפט הפלילי, תעבורה, מינהלי, עבודה ונגישות. ייעוץ ראשוני ישיר ולא מחייב.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="אלון פרדו - עורך דין">
+    <meta property="og:title" id="og-title" content="אלון פרדו | עורך דין">
+    <meta property="og:description" id="og-description" content="ייצוג אישי בתחומי המשפט הפלילי, תעבורה, מינהלי, עבודה ונגישות.">
+    <meta property="og:locale" id="og-locale" content="he_IL">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" id="twitter-title" content="אלון פרדו | עורך דין">
+    <meta name="twitter:description" id="twitter-description" content="ייצוג אישי בתחומי המשפט הפלילי, תעבורה, מינהלי, עבודה ונגישות.">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="he" href="/">
+    <link rel="alternate" hreflang="en" href="/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "אלון פרדו - עורך דין",
+      "alternateName": "Alon Pardo - Attorney at Law",
+      "description": "ייצוג משפטי אישי בתחומי הפלילי, תעבורה, מינהלי, עבודה ונגישות",
+      "telephone": "+972524203401",
+      "url": "/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IL"
+      },
+      "serviceType": ["Criminal Law", "Traffic Law", "Administrative Law", "Labour Law", "Accessibility Law"],
+      "availableLanguage": [
+        {"@type": "Language", "name": "Hebrew"},
+        {"@type": "Language", "name": "English"}
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+972524203401",
+        "availableLanguage": ["Hebrew", "English"]
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', 'Assistant', sans-serif; }
@@ -108,7 +159,7 @@
             <div class="hidden md:block">
                 <div class="relative">
                     <div class="absolute -inset-4 border border-gold/30 rounded-sm"></div>
-                    <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" alt="Legal Professional" class="relative grayscale hover:grayscale-0 transition duration-700 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" alt="Legal Professional" class="relative grayscale hover:grayscale-0 transition duration-700 shadow-2xl" width="800" height="534" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -221,7 +272,7 @@
     <section id="about" class="py-24 bg-stone-50">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div class="order-2 md:order-1">
-                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Lawyer Office" class="rounded shadow-xl">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Lawyer Office" class="rounded shadow-xl" width="800" height="534" loading="lazy">
             </div>
             <div class="order-1 md:order-2 rtl:text-right">
                 <h2 class="text-4xl mb-8 leading-tight" data-t="about_title">Strategic Advocacy <br>Tailored to Your Case.</h2>
@@ -673,6 +724,28 @@
                     footerLinksDiv.classList.add('md:justify-end');
                 }
             }
+
+            // Update page title and SEO meta tags
+            const seoData = {
+                he: {
+                    title: 'אלון פרדו | עורך דין',
+                    description: 'עו"ד אלון פרדו - ייצוג אישי בתחומי המשפט הפלילי, תעבורה, מינהלי, עבודה ונגישות. ייעוץ ראשוני ישיר ולא מחייב.',
+                    locale: 'he_IL'
+                },
+                en: {
+                    title: 'Alon Pardo | Attorney at Law',
+                    description: 'Attorney Alon Pardo – personal legal representation in Criminal, Traffic, Administrative, Labour, and Accessibility law. Direct, no-obligation initial consultation.',
+                    locale: 'en_US'
+                }
+            };
+            const seo = seoData[currentLang];
+            document.getElementById('page-title').textContent = seo.title;
+            document.getElementById('meta-description').setAttribute('content', seo.description);
+            document.getElementById('og-title').setAttribute('content', seo.title);
+            document.getElementById('og-description').setAttribute('content', seo.description);
+            document.getElementById('og-locale').setAttribute('content', seo.locale);
+            document.getElementById('twitter-title').setAttribute('content', seo.title);
+            document.getElementById('twitter-description').setAttribute('content', seo.description);
         }
 
         // Initialize with default language

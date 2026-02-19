@@ -4,9 +4,13 @@
   "description": "Professional landing page for a self-employed lawyer",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/tailwind.css --minify"
   },
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }
