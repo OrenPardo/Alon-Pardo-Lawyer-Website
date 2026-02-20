@@ -346,7 +346,7 @@
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h3 class="text-2xl mb-3" data-t="form_success_title">Message Sent</h3>
-                <p class="text-stone-400 mb-6" data-t="form_success_desc">WhatsApp is opening with your message. I'll be in touch shortly.</p>
+                <p class="text-stone-400 mb-6" data-t="form_success_desc">Your message has been sent. I'll be in touch shortly.</p>
                 <button onclick="resetContactForm()" class="text-gold underline text-sm" data-t="form_success_back">Send another message</button>
             </div>
             <div class="mt-8 text-center">
@@ -457,7 +457,7 @@
                 footer_legal: "Legal Notice",
                 skip_to_content: "Skip to content",
                 form_success_title: "Message Sent",
-                form_success_desc: "WhatsApp is opening with your message. I'll be in touch shortly.",
+                form_success_desc: "Your message has been sent. I'll be in touch shortly.",
                 form_success_back: "Send another message"
             },
             he: {
@@ -537,7 +537,7 @@
                 footer_legal: "הודעה משפטית",
                 skip_to_content: "דלג לתוכן המרכזי",
                 form_success_title: "ההודעה נשלחה",
-                form_success_desc: "וואטסאפ נפתח עם ההודעה שלך. אחזור אליך בקרוב.",
+                form_success_desc: "ההודעה שלך נשלחה. אחזור אליך בקרוב.",
                 form_success_back: "לשליחת הודעה נוספת"
             }
         };
@@ -759,7 +759,7 @@
             updateContent();
         });
 
-        function handleContactSubmit(event) {
+        async function handleContactSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('full-name').value.trim();
             const phone = document.getElementById('phone').value.trim();
@@ -768,14 +768,30 @@
             const email = document.getElementById('email-address').value.trim();
             const message = document.getElementById('message-summary').value.trim();
 
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+
+            // Send email via server
+            try {
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, caseType: caseTypeLabel, email, message, lang: currentLang })
+                });
+            } catch (e) {
+                // Silent – WhatsApp still opens as fallback
+            }
+
+            // Also open WhatsApp
             let waMessage;
             if (currentLang === 'he') {
                 waMessage = `שם: ${name}\nטלפון: ${phone}\nסוג התיק: ${caseTypeLabel}${email ? '\nאימייל: ' + email : ''}\nפרטים:\n${message}`;
             } else {
                 waMessage = `Name: ${name}\nPhone: ${phone}\nCase Type: ${caseTypeLabel}${email ? '\nEmail: ' + email : ''}\nDetails:\n${message}`;
             }
-
             window.open('https://wa.me/972524203401?text=' + encodeURIComponent(waMessage), '_blank');
+
+            submitBtn.disabled = false;
             document.getElementById('contact-form').classList.add('hidden');
             document.getElementById('form-success').classList.remove('hidden');
         }
