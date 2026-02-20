@@ -70,9 +70,18 @@
     </main>
 
     <footer class="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-xl font-bold tracking-tighter text-white mb-4" data-t="brand_name">ALON <span class="text-gold">PARDO</span></div>
-            <div class="text-xs uppercase tracking-widest" data-t="footer_copy">&copy; 2026 אלון פרדו. כל הזכויות שמורות.</div>
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-baseline gap-8">
+            <div class="text-xs uppercase tracking-widest order-2 md:order-1 rtl:order-2" data-t="footer_copy">&copy; 2026 אלון פרדו. כל הזכויות שמורות.</div>
+            <div class="flex flex-col md:flex-row items-baseline gap-8 order-1 md:order-2 rtl:order-1">
+                <button id="footer-brand" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition focus:outline-none whitespace-nowrap" data-t="brand_name" aria-label="Back to home">ALON <span class="text-gold">PARDO</span></button>
+                <div class="text-xs uppercase tracking-widest rtl:space-x-reverse flex flex-wrap justify-center md:justify-end items-baseline gap-x-6 gap-y-2">
+                    <a href="/privacy" class="hover:text-white transition" data-t="footer_privacy">מדיניות פרטיות</a>
+                    <a href="/terms" class="hover:text-white transition" data-t="footer_terms">תנאי שימוש</a>
+                    <a href="/cookies" class="hover:text-white transition" data-t="footer_cookies">מדיניות עוגיות</a>
+                    <a href="/disclaimer" class="hover:text-white transition" data-t="footer_disclaimer">הצהרה משפטית</a>
+                    <a href="/accessibility-statement" class="hover:text-white transition" data-t="footer_accessibility_statement">הצהרת נגישות</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -92,7 +101,12 @@
                 l_sec2_desc: 'All rights to the content, design, and services appearing on this site are reserved to attorney Alon Pardo. No part of the site may be copied, reproduced, or used without prior written permission.',
                 l_sec3_title: 'Jurisdiction',
                 l_sec3_desc: 'The use of this website shall be governed solely by the laws of the State of Israel. The exclusive jurisdiction for everything related to the use of the site shall be with the competent courts in the Tel Aviv district.',
-                footer_copy: '&copy; 2026 Alon Pardo. All rights reserved.'
+                footer_copy: '&copy; 2026 Alon Pardo. All rights reserved.',
+                footer_privacy: 'Privacy Policy',
+                footer_terms: 'Terms of Use',
+                footer_cookies: 'Cookie Policy',
+                footer_disclaimer: 'Legal Disclaimer',
+                footer_accessibility_statement: 'Accessibility Statement'
             },
             he: {
                 brand_name: 'אלון <span class="text-gold">פרדו</span>',
@@ -108,7 +122,12 @@
                 l_sec2_desc: 'כל הזכויות בתכנים, בעיצוב ובשירותים המופיעים באתר זה שמורות לעו"ד אלון פרדו. אין להעתיק, לשכפל או להשתמש בכל חלק מהאתר ללא אישור מראש ובכתב.',
                 l_sec3_title: 'סמכות שיפוט',
                 l_sec3_desc: 'על השימוש באתר זה יחולו אך ורק דיני מדינת ישראל. סמכות השיפוט הבלעדית בכל הקשור לשימוש באתר תהיה לבתי המשפט המוסמכים במחוז תל אביב.',
-                footer_copy: '&copy; 2026 אלון פרדו. כל הזכויות שמורות.'
+                footer_copy: '&copy; 2026 אלון פרדו. כל הזכויות שמורות.',
+                footer_privacy: 'מדיניות פרטיות',
+                footer_terms: 'תנאי שימוש',
+                footer_cookies: 'מדיניות עוגיות',
+                footer_disclaimer: 'הצהרה משפטית',
+                footer_accessibility_statement: 'הצהרת נגישות'
             }
         };
 
@@ -126,13 +145,15 @@
             html.setAttribute('lang', currentLang);
             html.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
 
-            // Update brand button to navigate home with lang param
+            // Update brand buttons to navigate home with lang param
             const homeUrl = currentLang === 'en' ? '/?lang=en' : '/';
             const brandBtn = document.getElementById('brand-btn');
             if (brandBtn) brandBtn.onclick = function() { window.location.href = homeUrl; };
+            const footerBrand = document.getElementById('footer-brand');
+            if (footerBrand) footerBrand.onclick = function() { window.location.href = homeUrl; };
 
-            // Update nav/CTA links with lang param
-            document.querySelectorAll('nav a').forEach(link => {
+            // Update nav/CTA/footer links with lang param
+            document.querySelectorAll('nav a, footer a').forEach(link => {
                 const href = link.getAttribute('href');
                 if (href && href.startsWith('/')) {
                     try {
