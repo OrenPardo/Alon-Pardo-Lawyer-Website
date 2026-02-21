@@ -200,7 +200,7 @@
                 <button onclick="window.location.href='/'" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" id="footer-brand-expertise">ALON <span class="text-gold">PARDO</span></button>
                 <div class="text-xs uppercase tracking-widest rtl:space-x-reverse flex flex-wrap justify-center md:justify-end items-baseline gap-x-6 gap-y-2" id="footer-links-expertise">
                     <a href="/privacy" class="hover:text-white transition" id="fl-privacy">Privacy Policy</a>
-                    <a href="/terms" class="hover:text-white transition" id="fl-terms">Terms of Use</a>
+                    <a href="/terms" class="hover:text-white transition" id="fl-terms">Terms of Service</a>
                     <a href="/cookies" class="hover:text-white transition" id="fl-cookies">Cookie Policy</a>
                     <a href="/disclaimer" class="hover:text-white transition" id="fl-disclaimer">Legal Disclaimer</a>
                     <a href="/accessibility-statement" class="hover:text-white transition" id="fl-access">Accessibility Statement</a>
@@ -748,67 +748,157 @@
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`
             },
             terms: {
-                title: { en: "Terms of Use", he: "תנאי שימוש" },
-                desc: { 
-                    en: "Rules and guidelines for using our website and legal services.", 
-                    he: "כללים והנחיות לשימוש באתר ובשירותים המשפטיים שלנו." 
+                title: { en: "Terms of Service", he: "תנאי שירות" },
+                desc: {
+                    en: "These terms govern your use of the website operated by Alon Pardo, Attorney at Law. By accessing or using this site, you agree to be bound by these terms. If you do not agree, please do not use this website.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "תנאים אלו מסדירים את השימוש שלך באתר המופעל על ידי עו\"ד אלון פרדו. בגישה לאתר או בשימוש בו, הינך מסכים להיות מחויב לתנאים אלו. אם אינך מסכים, אנא הימנע משימוש באתר.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
-                    en: "User Obligations • Intellectual Property • Limitation of Liability",
-                    he: "חובות המשתמש • קניין רוחני • הגבלת אחריות"
+                    en: "<a href='#site-use' class='hover:text-gold transition'>Site Use</a> &nbsp;·&nbsp; <a href='#ip-content' class='hover:text-gold transition'>Content & IP</a> &nbsp;·&nbsp; <a href='#liability' class='hover:text-gold transition'>Liability</a> &nbsp;·&nbsp; <a href='#governing-law' class='hover:text-gold transition'>Governing Law</a>",
+                    he: "<a href='#site-use' class='hover:text-gold transition'>שימוש באתר</a> &nbsp;·&nbsp; <a href='#ip-content' class='hover:text-gold transition'>תוכן וקניין רוחני</a> &nbsp;·&nbsp; <a href='#liability' class='hover:text-gold transition'>אחריות</a> &nbsp;·&nbsp; <a href='#governing-law' class='hover:text-gold transition'>דין חל</a>"
                 },
-                common_situations_title: { en: "Acceptance of Terms", he: "קבלת התנאים" },
+                common_situations_title: { en: "Use of This Website", he: "שימוש באתר זה" },
                 common_situations: {
-                    en: ["By accessing this website, you agree to follow these terms.", "Content on this site is for informational purposes only."],
-                    he: ["בגלישה באתר זה, אתם מסכימים לפעול לפי תנאים אלו.", "התוכן באתר נועד למטרות מידע בלבד."]
+                    en: [
+                        "<div id='site-use' class='scroll-mt-32'><strong>Informational purposes only:</strong> All content on this website — including text, descriptions of practice areas, and legal information — is provided for general informational purposes. Nothing on this site constitutes legal advice, and no attorney-client relationship is formed by your use of this website.</div>",
+                        "<strong>No guarantee of outcome:</strong> Past results and case descriptions do not guarantee a similar outcome in your matter. Every legal case depends on its own unique facts and circumstances.",
+                        "<strong>Contact form and WhatsApp:</strong> Submitting an inquiry through the contact form or WhatsApp does not create an attorney-client relationship. Information shared through these channels is not protected by attorney-client privilege until a formal engagement is established.",
+                        "<strong>Eligibility:</strong> This website is intended for individuals aged 18 and older. By using this site, you confirm that you meet this requirement.",
+                        "<strong>Accuracy of information:</strong> You agree to provide accurate and truthful information when contacting us. We are not responsible for decisions made based on inaccurate information you provide."
+                    ],
+                    he: [
+                        "<div id='site-use' class='scroll-mt-32'><strong>למטרות מידע בלבד:</strong> כל התוכן באתר זה — כולל טקסט, תיאורי תחומי עיסוק ומידע משפטי — מסופק למטרות מידע כלליות בלבד. שום דבר באתר אינו מהווה ייעוץ משפטי, ואין נוצר יחס עורך דין-לקוח על ידי שימושך באתר.</div>",
+                        "<strong>אין ערובה לתוצאה:</strong> תוצאות עבר ותיאורי תיקים אינם מבטיחים תוצאה דומה בעניינך. כל תיק משפטי תלוי בנסיבות העובדתיות הייחודיות שלו.",
+                        "<strong>טופס יצירת קשר ווואטסאפ:</strong> שליחת פנייה דרך טופס יצירת הקשר או וואטסאפ אינה יוצרת יחס עורך דין-לקוח. מידע שנמסר בערוצים אלו אינו מוגן בחיסיון עורך דין-לקוח עד שנקבע ייצוג רשמי.",
+                        "<strong>כשירות:</strong> אתר זה מיועד לאנשים בני 18 ומעלה. בשימוש באתר, הינך מאשר שאתה עומד בדרישה זו.",
+                        "<strong>דיוק המידע:</strong> הינך מתחייב למסור מידע מדויק ואמיתי בעת פנייה אלינו. איננו אחראים להחלטות שהתקבלו על בסיס מידע לא מדויק שנמסר על ידך."
+                    ]
                 },
-                what_to_do_title: { en: "Prohibited Use", he: "שימוש אסור" },
+                what_to_do_title: { en: "Content & Intellectual Property", he: "תוכן וקניין רוחני" },
                 what_to_do: {
-                    en: ["Do not use this site for illegal purposes.", "Do not reproduce content without prior written consent.", "Do not attempt to disrupt the website's security."],
-                    he: ["אין להשתמש באתר למטרות לא חוקיות.", "אין לשעתק תוכן ללא הסכמה מראש בכתב.", "אין לנסות לפגוע באבטחת האתר."]
+                    en: [
+                        "<div id='ip-content' class='scroll-mt-32'><strong>Ownership:</strong> All content on this website — including text, design, layout, graphics, logos, and code — is the property of Alon Pardo or used under license. All rights are reserved.</div>",
+                        "<strong>Permitted use:</strong> You may view and print pages from this website for your own personal, non-commercial use, provided you do not modify the content and retain all copyright notices.",
+                        "<strong>Prohibited use:</strong> You may not reproduce, distribute, publicly display, create derivative works from, or commercially exploit any content from this website without prior written consent.",
+                        "<strong>Third-party links:</strong> This website may contain links to external websites. We are not responsible for the content, accuracy, or privacy practices of third-party sites. Inclusion of a link does not imply endorsement.",
+                        "<strong>Trademarks:</strong> The name \"Alon Pardo\", the site logo, and related branding are proprietary marks. Use of these marks without written permission is prohibited."
+                    ],
+                    he: [
+                        "<div id='ip-content' class='scroll-mt-32'><strong>בעלות:</strong> כל התוכן באתר זה — כולל טקסט, עיצוב, פריסה, גרפיקה, לוגואים וקוד — הוא רכושו של אלון פרדו או בשימוש ברישיון. כל הזכויות שמורות.</div>",
+                        "<strong>שימוש מותר:</strong> באפשרותך לצפות ולהדפיס דפים מאתר זה לשימוש אישי ולא מסחרי בלבד, בתנאי שלא תשנה את התוכן ותשמור על כל הודעות זכויות היוצרים.",
+                        "<strong>שימוש אסור:</strong> אין לשעתק, להפיץ, להציג בפומבי, ליצור יצירות נגזרות או לנצל מסחרית כל תוכן מאתר זה ללא הסכמה מראש בכתב.",
+                        "<strong>קישורים לצדדים שלישיים:</strong> אתר זה עשוי להכיל קישורים לאתרים חיצוניים. איננו אחראים לתוכן, לדיוק או לנוהלי הפרטיות של אתרי צד שלישי. הכללת קישור אינה מהווה המלצה.",
+                        "<strong>סימני מסחר:</strong> השם \"אלון פרדו\", לוגו האתר והמיתוג הקשור הם סימנים קנייניים. שימוש בסימנים אלו ללא אישור בכתב אסור."
+                    ]
                 },
-                how_i_help_title: { en: "Changes to Terms", he: "שינויים בתנאים" },
+                how_i_help_title: { en: "Limitation of Liability", he: "הגבלת אחריות" },
                 how_i_help: {
-                    en: ["We reserve the right to modify these terms at any time.", "Changes are effective immediately upon posting."],
-                    he: ["אנו שומרים לעצמנו את הזכות לשנות תנאים אלו בכל עת.", "השינויים נכנסים לתוקף מיד עם פרסומם."]
+                    en: [
+                        "<div id='liability' class='scroll-mt-32'><strong>No warranties:</strong> This website is provided \"as is\" and \"as available\" without warranties of any kind, whether express or implied. We do not warrant that the site will be uninterrupted, error-free, or free from harmful components.</div>",
+                        "<strong>Limitation of damages:</strong> To the maximum extent permitted by law, Alon Pardo shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of — or inability to use — this website.",
+                        "<strong>Professional liability:</strong> Nothing in these terms limits or excludes liability arising from a formal attorney-client engagement, which is governed by its own separate retainer agreement and applicable professional regulations.",
+                        "<strong>Indemnification:</strong> You agree to indemnify and hold harmless Alon Pardo from any claims, damages, or expenses arising from your breach of these terms or misuse of this website.",
+                        "<strong>Service availability:</strong> We reserve the right to modify, suspend, or discontinue any part of this website at any time without prior notice or liability."
+                    ],
+                    he: [
+                        "<div id='liability' class='scroll-mt-32'><strong>ללא אחריות:</strong> אתר זה מסופק \"כמות שהוא\" ו\"כפי שזמין\" ללא אחריות מכל סוג, בין מפורשת ובין משתמעת. איננו מתחייבים שהאתר יפעל ללא הפרעה, ללא שגיאות או ללא רכיבים מזיקים.</div>",
+                        "<strong>הגבלת נזקים:</strong> במידה המרבית המותרת על פי הדין, אלון פרדו לא יהיה אחראי לכל נזק ישיר, עקיף, מקרי, תוצאתי או עונשי הנובע משימושך — או מחוסר יכולתך להשתמש — באתר זה.",
+                        "<strong>אחריות מקצועית:</strong> אין בתנאים אלו כדי להגביל או לשלול אחריות הנובעת מייצוג רשמי של עורך דין-לקוח, המוסדר בהסכם שכר טרחה נפרד ובתקנות המקצועיות החלות.",
+                        "<strong>שיפוי:</strong> הינך מתחייב לשפות ולהגן על אלון פרדו מפני כל תביעה, נזק או הוצאה הנובעים מהפרת תנאים אלו או משימוש לרעה באתר זה.",
+                        "<strong>זמינות השירות:</strong> אנו שומרים לעצמנו את הזכות לשנות, להשהות או להפסיק כל חלק מהאתר בכל עת ללא הודעה מוקדמת או אחריות."
+                    ]
                 },
                 services: {
-                    en: ["Website access rules", "Intellectual property rights", "Liability limitations", "Governing law summary"],
-                    he: ["כללי גישה לאתר", "זכויות קניין רוחני", "הגבלת אחריות", "סיכום הדין החל"]
+                    en: [
+                        "<div id='governing-law' class='scroll-mt-32'><strong>Governing law:</strong> These terms are governed by the laws of the State of Israel, without regard to conflict-of-law principles.</div>",
+                        "<strong>Jurisdiction:</strong> Any dispute arising from these terms or your use of this website shall be subject to the exclusive jurisdiction of the competent courts in Israel.",
+                        "<strong>Severability:</strong> If any provision of these terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.",
+                        "<strong>Entire agreement:</strong> These terms, together with our <a href='/privacy' class='text-gold hover:underline'>Privacy Policy</a> and <a href='/cookies' class='text-gold hover:underline'>Cookie Policy</a>, constitute the entire agreement between you and Alon Pardo regarding the use of this website.",
+                        "<strong>Changes to these terms:</strong> We may revise these terms at any time by posting an updated version on this page. Continued use of the website after changes are posted constitutes acceptance of the revised terms."
+                    ],
+                    he: [
+                        "<div id='governing-law' class='scroll-mt-32'><strong>דין חל:</strong> תנאים אלו כפופים לחוקי מדינת ישראל, ללא התחשבות בכללי ברירת הדין.</div>",
+                        "<strong>סמכות שיפוט:</strong> כל מחלוקת הנובעת מתנאים אלו או משימושך באתר תהיה כפופה לסמכות השיפוט הבלעדית של בתי המשפט המוסמכים בישראל.",
+                        "<strong>הפרדת סעיפים:</strong> אם סעיף כלשהו בתנאים אלו יימצא כבלתי ניתן לאכיפה, יתר הסעיפים ימשיכו לעמוד בתוקפם המלא.",
+                        "<strong>ההסכם המלא:</strong> תנאים אלו, יחד עם <a href='/privacy' class='text-gold hover:underline'>מדיניות הפרטיות</a> ו<a href='/cookies' class='text-gold hover:underline'>מדיניות העוגיות</a> שלנו, מהווים את ההסכם המלא בינך לבין אלון פרדו בנוגע לשימוש באתר זה.",
+                        "<strong>שינויים בתנאים:</strong> אנו רשאים לעדכן תנאים אלו בכל עת על ידי פרסום גרסה מעודכנת בדף זה. המשך השימוש באתר לאחר פרסום השינויים מהווה הסכמה לתנאים המעודכנים."
+                    ]
                 },
-                services_label: { en: "Key Points", he: "נקודות עיקריות" },
+                services_label: { en: "Governing Law & General", he: "דין חל וכללי" },
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
             },
             cookies: {
                 title: { en: "Cookie Policy", he: "מדיניות עוגיות" },
-                desc: { 
-                    en: "How we use cookies and similar technologies to improve your experience.", 
-                    he: "כיצד אנו משתמשים בעוגיות ובטכנולוגיות דומות כדי לשפר את החוויה שלכם." 
+                desc: {
+                    en: "This policy explains what cookies are, how we use them on this website, and how you can manage your preferences. This site is operated by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "מדיניות זו מסבירה מהן עוגיות, כיצד אנו משתמשים בהן באתר זה וכיצד ניתן לנהל את ההעדפות שלך. אתר זה מופעל על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
-                    en: "Necessary Cookies • Performance Cookies • Tracking • Preferences",
-                    he: "עוגיות הכרחיות • עוגיות ביצועים • מעקב • העדפות"
+                    en: "<a href='#what-are-cookies' class='hover:text-gold transition'>What Are Cookies</a> &nbsp;·&nbsp; <a href='#cookies-we-use' class='hover:text-gold transition'>Cookies We Use</a> &nbsp;·&nbsp; <a href='#third-party' class='hover:text-gold transition'>Third Parties</a> &nbsp;·&nbsp; <a href='#manage-cookies' class='hover:text-gold transition'>Your Choices</a>",
+                    he: "<a href='#what-are-cookies' class='hover:text-gold transition'>מהן עוגיות</a> &nbsp;·&nbsp; <a href='#cookies-we-use' class='hover:text-gold transition'>עוגיות בשימוש</a> &nbsp;·&nbsp; <a href='#third-party' class='hover:text-gold transition'>צדדים שלישיים</a> &nbsp;·&nbsp; <a href='#manage-cookies' class='hover:text-gold transition'>הבחירות שלך</a>"
                 },
-                common_situations_title: { en: "What are Cookies?", he: "מהן עוגיות?" },
+                common_situations_title: { en: "What Are Cookies", he: "מהן עוגיות" },
                 common_situations: {
-                    en: ["Cookies are small text files stored on your device.", "They help us remember your language and preference settings."],
-                    he: ["עוגיות הן קבצי טקסט קטנים המאוחסנים במכשיר שלכם.", "הן עוזרות לנו לזכור את הגדרות השפה והעדפות שלכם."]
+                    en: [
+                        "<div id='what-are-cookies' class='scroll-mt-32'><strong>Definition:</strong> Cookies are small text files that a website places on your device (computer, phone, or tablet) when you visit. They allow the site to recognise your device and remember certain information between visits.</div>",
+                        "<strong>Session cookies:</strong> Temporary cookies that are deleted when you close your browser. They are essential for basic site functionality such as navigation and form handling.",
+                        "<strong>Persistent cookies:</strong> Cookies that remain on your device for a set period or until you delete them. They help remember your preferences — such as your selected language — across visits.",
+                        "<strong>First-party vs. third-party:</strong> First-party cookies are set by this website directly. Third-party cookies are set by external services embedded in our pages (if any)."
+                    ],
+                    he: [
+                        "<div id='what-are-cookies' class='scroll-mt-32'><strong>הגדרה:</strong> עוגיות הן קבצי טקסט קטנים שאתר מציב על המכשיר שלך (מחשב, טלפון או טאבלט) בעת ביקור. הן מאפשרות לאתר לזהות את המכשיר שלך ולזכור מידע מסוים בין ביקורים.</div>",
+                        "<strong>עוגיות הפעלה (Session):</strong> עוגיות זמניות שנמחקות עם סגירת הדפדפן. הן חיוניות לתפקוד בסיסי של האתר כגון ניווט וטיפול בטפסים.",
+                        "<strong>עוגיות מתמידות (Persistent):</strong> עוגיות שנשארות על המכשיר שלך לתקופה מוגדרת או עד למחיקתן. הן עוזרות לזכור את ההעדפות שלך — כגון השפה שבחרת — בין ביקורים.",
+                        "<strong>עוגיות צד ראשון לעומת צד שלישי:</strong> עוגיות צד ראשון מוגדרות ישירות על ידי אתר זה. עוגיות צד שלישי מוגדרות על ידי שירותים חיצוניים המוטמעים בדפים שלנו (אם קיימים)."
+                    ]
                 },
-                what_to_do_title: { en: "Managing Cookies", he: "ניהול עוגיות" },
+                what_to_do_title: { en: "Cookies We Use", he: "עוגיות בשימוש באתר" },
                 what_to_do: {
-                    en: ["You can disable cookies in your browser settings.", "Disabling cookies may affect website functionality.", "Use browser tools to clear your cookie cache."],
-                    he: ["ניתן להשבית עוגיות בהגדרות הדפדפן.", "השבתת עוגיות עלולה להשפיע על תפקוד האתר.", "השתמשו בכלי הדפדפן לניקוי זיכרון העוגיות."]
+                    en: [
+                        "<div id='cookies-we-use' class='scroll-mt-32'><strong>Strictly necessary cookies:</strong> These cookies are required for the website to function. They enable core features such as page navigation, form submission (contact form), and security. They cannot be disabled without breaking the site. <em>No consent required.</em></div>",
+                        "<strong>Language preference:</strong> We store your language selection (Hebrew or English) so it persists as you navigate between pages. This is handled via the URL parameter and does not require a cookie, but your browser may cache this preference.",
+                        "<strong>Rate limiting:</strong> Our server uses a short-lived identifier to enforce rate limits on the contact form (maximum 5 submissions per 15 minutes per IP address). This protects the site from abuse and does not track your browsing activity.",
+                        "<strong>What we do NOT use:</strong> This website does not use advertising cookies, social media tracking pixels, remarketing tags, or any third-party analytics services (such as Google Analytics). We do not build user profiles or track you across other websites."
+                    ],
+                    he: [
+                        "<div id='cookies-we-use' class='scroll-mt-32'><strong>עוגיות הכרחיות בלבד:</strong> עוגיות אלו נדרשות לתפקוד האתר. הן מאפשרות תכונות ליבה כמו ניווט בדפים, שליחת טפסים (טופס יצירת קשר) ואבטחה. לא ניתן לבטלן מבלי לפגוע בפעולת האתר. <em>אינן דורשות הסכמה.</em></div>",
+                        "<strong>העדפת שפה:</strong> אנו שומרים את בחירת השפה שלך (עברית או אנגלית) כך שתישמר בעת ניווט בין דפים. הדבר מטופל באמצעות פרמטר בכתובת ה-URL ואינו דורש עוגייה, אך הדפדפן שלך עשוי לשמור העדפה זו במטמון.",
+                        "<strong>הגבלת קצב:</strong> השרת שלנו משתמש במזהה קצר-מועד לאכיפת הגבלות קצב בטופס יצירת הקשר (מקסימום 5 שליחות ב-15 דקות לכתובת IP). הדבר מגן על האתר מפני שימוש לרעה ואינו עוקב אחר פעילות הגלישה שלך.",
+                        "<strong>מה אנו לא משתמשים בו:</strong> אתר זה אינו משתמש בעוגיות פרסום, פיקסלי מעקב של רשתות חברתיות, תגי רימרקטינג או שירותי אנליטיקס של צד שלישי (כגון Google Analytics). איננו בונים פרופילי משתמשים ואיננו עוקבים אחריך באתרים אחרים."
+                    ]
                 },
-                how_i_help_title: { en: "Third-party Cookies", he: "עוגיות צד שלישי" },
+                how_i_help_title: { en: "Third-Party Services", he: "שירותי צד שלישי" },
                 how_i_help: {
-                    en: ["We may use analytics services that set their own cookies.", "These services help us understand how users interact with our site."],
-                    he: ["אנו עשויים להשתמש בשירותי אנליטיקה המגדירים עוגיות משלהם.", "שירותים אלו עוזרים לנו להבין כיצד משתמשים מתקשרים עם האתר."]
+                    en: [
+                        "<div id='third-party' class='scroll-mt-32'><strong>Google Fonts:</strong> This website loads fonts from Google Fonts. Google may receive your IP address and basic request data when fonts are downloaded. Google's privacy policy applies to this data processing. No cookies are set by Google Fonts.</div>",
+                        "<strong>WhatsApp (Meta Platforms):</strong> Our WhatsApp contact button links to wa.me. When you click it and open a conversation, Meta's privacy policy and cookie practices govern that interaction. No WhatsApp cookies are placed on this website.",
+                        "<strong>Hosting provider:</strong> Our hosting infrastructure may set essential server-side cookies or log technical data (IP address, request timestamps) for security and operational purposes. This data is not used for tracking or profiling.",
+                        "<strong>No analytics or ad networks:</strong> We have intentionally chosen not to integrate any analytics platforms, advertising networks, or social media widgets that would place third-party tracking cookies on your device."
+                    ],
+                    he: [
+                        "<div id='third-party' class='scroll-mt-32'><strong>Google Fonts:</strong> אתר זה טוען גופנים מ-Google Fonts. גוגל עשויה לקבל את כתובת ה-IP שלך ונתוני בקשה בסיסיים בעת הורדת הגופנים. מדיניות הפרטיות של גוגל חלה על עיבוד נתונים זה. Google Fonts אינו מגדיר עוגיות.</div>",
+                        "<strong>וואטסאפ (Meta Platforms):</strong> כפתור יצירת הקשר בוואטסאפ מפנה ל-wa.me. כאשר לוחצים עליו ופותחים שיחה, מדיניות הפרטיות ונוהלי העוגיות של Meta חלים על אינטראקציה זו. לא מוצבות עוגיות וואטסאפ באתר זה.",
+                        "<strong>ספק אחסון:</strong> תשתית האחסון שלנו עשויה להגדיר עוגיות חיוניות בצד השרת או לתעד נתונים טכניים (כתובת IP, חותמות זמן של בקשות) למטרות אבטחה ותפעול. נתונים אלו אינם משמשים למעקב או לפרופיילינג.",
+                        "<strong>ללא אנליטיקס או רשתות פרסום:</strong> בחרנו במכוון שלא לשלב פלטפורמות אנליטיקס, רשתות פרסום או ווידג'טים של רשתות חברתיות שיציבו עוגיות מעקב של צד שלישי על המכשיר שלך."
+                    ]
                 },
                 services: {
-                    en: ["Types of cookies used", "Purpose of data collection", "User control options", "Policy update information"],
-                    he: ["סוגי עוגיות בשימוש", "מטרת איסוף הנתונים", "אפשרויות שליטה למשתמש", "מידע על עדכון מדיניות"]
+                    en: [
+                        "<div id='manage-cookies' class='scroll-mt-32'><strong>Browser settings:</strong> Most browsers allow you to view, manage, and delete cookies through their settings menu. Look for \"Privacy\", \"Security\", or \"Cookies\" in your browser's preferences. Changes apply to all websites, not just this one.</div>",
+                        "<strong>Blocking all cookies:</strong> You can configure your browser to block all cookies. However, this may prevent the contact form and other essential features from functioning correctly.",
+                        "<strong>Deleting cookies:</strong> You can delete all cookies stored by your browser at any time. On your next visit, the site will behave as if you are a first-time visitor.",
+                        "<strong>Do Not Track:</strong> Some browsers send a \"Do Not Track\" signal. Since this website does not use tracking or analytics cookies, we effectively honour this preference by default.",
+                        "<strong>Changes to this policy:</strong> We may update this cookie policy from time to time. Any changes will be posted on this page with an updated revision date. For questions, contact us at <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a>."
+                    ],
+                    he: [
+                        "<div id='manage-cookies' class='scroll-mt-32'><strong>הגדרות דפדפן:</strong> רוב הדפדפנים מאפשרים לצפות, לנהל ולמחוק עוגיות דרך תפריט ההגדרות. חפשו \"פרטיות\", \"אבטחה\" או \"עוגיות\" בהעדפות הדפדפן שלך. השינויים חלים על כל האתרים, לא רק על אתר זה.</div>",
+                        "<strong>חסימת כל העוגיות:</strong> ניתן להגדיר את הדפדפן לחסום את כל העוגיות. עם זאת, הדבר עלול למנוע מטופס יצירת הקשר ותכונות חיוניות אחרות לפעול כראוי.",
+                        "<strong>מחיקת עוגיות:</strong> ניתן למחוק את כל העוגיות המאוחסנות בדפדפן בכל עת. בביקור הבא, האתר יתנהג כאילו אתה מבקר לראשונה.",
+                        "<strong>Do Not Track:</strong> חלק מהדפדפנים שולחים אות \"Do Not Track\". מכיוון שאתר זה אינו משתמש בעוגיות מעקב או אנליטיקס, אנו מכבדים העדפה זו כברירת מחדל.",
+                        "<strong>שינויים במדיניות:</strong> אנו עשויים לעדכן מדיניות עוגיות זו מעת לעת. כל שינוי יפורסם בדף זה עם תאריך עדכון מעודכן. לשאלות, צרו קשר בכתובת <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a>."
+                    ]
                 },
-                services_label: { en: "Cookie Types", he: "סוגי עוגיות" },
+                services_label: { en: "Your Choices", he: "הבחירות שלך" },
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>`
             },
             disclaimer: {
@@ -979,8 +1069,8 @@
         // Footer
         const footerCopy = { en: '&copy; 2026 Alon Pardo. All rights reserved.', he: '&copy; 2026 אלון פרדו. כל הזכויות שמורות.' };
         const footerLabels = {
-            en: { brand: 'ALON <span class="text-gold">PARDO</span>', privacy: 'Privacy Policy', terms: 'Terms of Use', cookies: 'Cookie Policy', disclaimer: 'Legal Disclaimer', access: 'Accessibility Statement' },
-            he: { brand: 'אלון <span class="text-gold">פרדו</span>', privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', cookies: 'מדיניות עוגיות', disclaimer: 'הצהרה משפטית', access: 'הצהרת נגישות' }
+            en: { brand: 'ALON <span class="text-gold">PARDO</span>', privacy: 'Privacy Policy', terms: 'Terms of Service', cookies: 'Cookie Policy', disclaimer: 'Legal Disclaimer', access: 'Accessibility Statement' },
+            he: { brand: 'אלון <span class="text-gold">פרדו</span>', privacy: 'מדיניות פרטיות', terms: 'תנאי שירות', cookies: 'מדיניות עוגיות', disclaimer: 'הצהרה משפטית', access: 'הצהרת נגישות' }
         };
         document.getElementById('footer-copy-expertise').innerHTML = footerCopy[lang];
         const footerBrandEl = document.getElementById('footer-brand-expertise');
