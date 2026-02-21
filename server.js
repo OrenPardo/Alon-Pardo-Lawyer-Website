@@ -37,8 +37,15 @@ app.use(compression());
 // Parse JSON bodies
 app.use(express.json({ limit: '16kb' }));
 
-// Serve static files with caching
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: '7d' }));
+// Serve static files with caching (HTML excluded — served via routes with no-cache)
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '7d',
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-cache');
+        }
+    }
+}));
 
 // Reuse transporter (created once, not per-request)
 const transporter = process.env.SMTP_PASS
