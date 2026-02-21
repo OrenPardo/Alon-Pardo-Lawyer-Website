@@ -903,34 +903,76 @@
             },
             disclaimer: {
                 title: { en: "Legal Disclaimer", he: "הצהרה משפטית" },
-                desc: { 
-                    en: "Important legal information about the content on this website.", 
-                    he: "מידע משפטי חשוב לגבי התוכן באתר זה." 
+                desc: {
+                    en: "Please read this disclaimer carefully before using this website. It sets out important limitations regarding the content published here by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "אנא קראו הצהרה זו בעיון לפני השימוש באתר. היא מפרטת מגבלות חשובות בנוגע לתוכן המפורסם כאן על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
-                    en: "Not Legal Advice • No Lawyer-Client Relationship • Accuracy of Information",
-                    he: "לא ייעוץ משפטי • אין יחסי עורך דין-לקוח • דיוק המידע"
+                    en: "<a href='#not-advice' class='hover:text-gold transition'>Not Legal Advice</a> &nbsp;·&nbsp; <a href='#no-relationship' class='hover:text-gold transition'>No Attorney-Client Relationship</a> &nbsp;·&nbsp; <a href='#accuracy' class='hover:text-gold transition'>Accuracy & Liability</a> &nbsp;·&nbsp; <a href='#external' class='hover:text-gold transition'>External Links & Jurisdiction</a>",
+                    he: "<a href='#not-advice' class='hover:text-gold transition'>לא ייעוץ משפטי</a> &nbsp;·&nbsp; <a href='#no-relationship' class='hover:text-gold transition'>אין יחסי עורך דין-לקוח</a> &nbsp;·&nbsp; <a href='#accuracy' class='hover:text-gold transition'>דיוק ואחריות</a> &nbsp;·&nbsp; <a href='#external' class='hover:text-gold transition'>קישורים וסמכות שיפוט</a>"
                 },
                 common_situations_title: { en: "Not Legal Advice", he: "לא ייעוץ משפטי" },
                 common_situations: {
-                    en: ["The content here is for general information and does not constitute legal advice.", "Consult with a lawyer for specific legal issues."],
-                    he: ["התוכן כאן הוא למידע כללי בלבד ואינו מהווה ייעוץ משפטי.", "התייעצו עם עורך דין בנושאים משפטיים ספציפיים."]
+                    en: [
+                        "<div id='not-advice' class='scroll-mt-32'><strong>General information only:</strong> All content on this website — including practice area descriptions, legal summaries, blog posts (if any), and frequently asked questions — is provided for general informational and educational purposes only. It is not intended as, and should not be relied upon as, legal advice.</div>",
+                        "<strong>No substitute for professional counsel:</strong> The law is complex, varies by jurisdiction, and changes frequently. The information on this site may not reflect the most current legal developments or apply to your specific circumstances. Always consult a qualified attorney before making legal decisions.",
+                        "<strong>No guarantee of outcome:</strong> Any mention of past cases, results, or experience on this website is for illustrative purposes only and does not guarantee or predict a similar outcome in any future matter. Every case is unique and depends on its own facts.",
+                        "<strong>Professional regulations:</strong> The practice of law by Alon Pardo is subject to the rules and regulations of the Israel Bar Association. Nothing on this site is intended to violate or circumvent these professional obligations."
+                    ],
+                    he: [
+                        "<div id='not-advice' class='scroll-mt-32'><strong>מידע כללי בלבד:</strong> כל התוכן באתר זה — כולל תיאורי תחומי עיסוק, סיכומים משפטיים, פוסטים בבלוג (אם קיימים) ושאלות נפוצות — מסופק למטרות מידע כלליות וחינוכיות בלבד. הוא אינו מיועד לשמש, ואין להסתמך עליו כ-, ייעוץ משפטי.</div>",
+                        "<strong>אינו תחליף לייעוץ מקצועי:</strong> הדין מורכב, משתנה בין תחומי שיפוט ומתעדכן תדיר. ייתכן שהמידע באתר אינו משקף את ההתפתחויות המשפטיות העדכניות ביותר או אינו חל על נסיבותיך הספציפיות. יש להתייעץ תמיד עם עורך דין מוסמך לפני קבלת החלטות משפטיות.",
+                        "<strong>אין ערובה לתוצאה:</strong> כל אזכור של תיקים קודמים, תוצאות או ניסיון באתר זה הוא להמחשה בלבד ואינו מבטיח או מנבא תוצאה דומה בכל עניין עתידי. כל תיק ייחודי ותלוי בעובדותיו.",
+                        "<strong>רגולציה מקצועית:</strong> עריכת הדין על ידי אלון פרדו כפופה לכללים ולתקנות של לשכת עורכי הדין בישראל. אין בתוכן אתר זה כדי להפר או לעקוף חובות מקצועיות אלו."
+                    ]
                 },
-                what_to_do_title: { en: "No Relationship", he: "אין יחסי לקוח" },
+                what_to_do_title: { en: "No Attorney-Client Relationship", he: "אין יחסי עורך דין-לקוח" },
                 what_to_do: {
-                    en: ["Contacting us does not create an attorney-client relationship.", "Formal representation requires a written agreement.", "Do not send sensitive information before a relationship is established."],
-                    he: ["יצירת קשר אינה יוצרת יחסי עורך דין-לקוח.", "ייצוג רשמי דורש הסכם בכתב.", "אל תשלחו מידע רגיש לפני שנוצרו יחסים רשמיים."]
+                    en: [
+                        "<div id='no-relationship' class='scroll-mt-32'><strong>Browsing does not create a relationship:</strong> Simply visiting this website, reading its content, or navigating through practice area pages does not establish an attorney-client relationship between you and Alon Pardo.</div>",
+                        "<strong>Inquiries are not privileged:</strong> Submitting information through the contact form, WhatsApp, or any other channel on this site does not create an attorney-client relationship and is not protected by attorney-client privilege. Do not send confidential or sensitive information until a formal engagement has been confirmed in writing.",
+                        "<strong>Formal engagement required:</strong> An attorney-client relationship is established only when both parties sign a written retainer agreement that defines the scope of representation, fees, and obligations.",
+                        "<strong>Right to decline:</strong> Alon Pardo reserves the right to decline any request for representation at his sole discretion, for any reason, including but not limited to conflicts of interest or matters outside his areas of practice."
+                    ],
+                    he: [
+                        "<div id='no-relationship' class='scroll-mt-32'><strong>גלישה אינה יוצרת יחסים:</strong> עצם הביקור באתר זה, קריאת התוכן או ניווט בדפי תחומי העיסוק אינם מקימים יחסי עורך דין-לקוח בינך לבין אלון פרדו.</div>",
+                        "<strong>פניות אינן חסויות:</strong> שליחת מידע דרך טופס יצירת הקשר, וואטסאפ או כל ערוץ אחר באתר אינה יוצרת יחסי עורך דין-לקוח ואינה מוגנת בחיסיון עורך דין-לקוח. אין לשלוח מידע חסוי או רגיש עד שייצוג רשמי אושר בכתב.",
+                        "<strong>נדרש ייצוג רשמי:</strong> יחסי עורך דין-לקוח נוצרים רק כאשר שני הצדדים חותמים על הסכם שכר טרחה בכתב המגדיר את היקף הייצוג, שכר הטרחה והחובות.",
+                        "<strong>זכות לסירוב:</strong> אלון פרדו שומר לעצמו את הזכות לסרב לכל בקשת ייצוג לפי שיקול דעתו הבלעדי, מכל סיבה שהיא, לרבות ניגוד עניינים או עניינים מחוץ לתחומי עיסוקו."
+                    ]
                 },
-                how_i_help_title: { en: "External Links", he: "קישורים חיצוניים" },
+                how_i_help_title: { en: "Accuracy & Limitation of Liability", he: "דיוק והגבלת אחריות" },
                 how_i_help: {
-                    en: ["We are not responsible for the content of external websites linked here.", "Linking does not imply endorsement."],
-                    he: ["איננו אחראים לתוכן של אתרים חיצוניים המקושרים מכאן.", "קישור אינו מהווה המלצה."]
+                    en: [
+                        "<div id='accuracy' class='scroll-mt-32'><strong>Accuracy of content:</strong> While we make reasonable efforts to ensure the information on this website is accurate and up to date, we make no representations or warranties — express or implied — regarding the completeness, accuracy, reliability, or suitability of the content for any particular purpose.</div>",
+                        "<strong>No liability for reliance:</strong> Any reliance you place on the information provided on this website is at your own risk. Alon Pardo shall not be liable for any loss or damage arising from your use of, or reliance on, any content on this site.",
+                        "<strong>Errors and omissions:</strong> This website may contain typographical errors, inaccuracies, or omissions. We reserve the right to correct any errors and to update content at any time without prior notice.",
+                        "<strong>Availability:</strong> We do not guarantee that this website will be available at all times or that it will be free from errors, viruses, or other harmful components. Access may be interrupted for maintenance or circumstances beyond our control."
+                    ],
+                    he: [
+                        "<div id='accuracy' class='scroll-mt-32'><strong>דיוק התוכן:</strong> אף שאנו עושים מאמצים סבירים להבטיח שהמידע באתר זה מדויק ועדכני, איננו מציגים מצגים או נותנים אחריות — מפורשת או משתמעת — בנוגע לשלמות, דיוק, אמינות או התאמת התוכן לכל מטרה מסוימת.</div>",
+                        "<strong>אין אחריות על הסתמכות:</strong> כל הסתמכות על המידע המסופק באתר זה היא על אחריותך בלבד. אלון פרדו לא יהיה אחראי לכל אובדן או נזק הנובע משימושך ב-, או הסתמכותך על, כל תוכן באתר זה.",
+                        "<strong>שגיאות והשמטות:</strong> אתר זה עשוי להכיל שגיאות הקלדה, אי-דיוקים או השמטות. אנו שומרים לעצמנו את הזכות לתקן שגיאות ולעדכן תוכן בכל עת ללא הודעה מוקדמת.",
+                        "<strong>זמינות:</strong> איננו מתחייבים שאתר זה יהיה זמין בכל עת או שיהיה חופשי משגיאות, וירוסים או רכיבים מזיקים אחרים. הגישה עשויה להיות מופרעת לצורכי תחזוקה או בנסיבות שאינן בשליטתנו."
+                    ]
                 },
                 services: {
-                    en: ["Content scope clarification", "Relationship status notice", "Liability disclaimer", "Jurisdiction information"],
-                    he: ["הבהרת היקף התוכן", "הודעה על מעמד היחסים", "הסרת אחריות", "מידע על סמכות שיפוט"]
+                    en: [
+                        "<div id='external' class='scroll-mt-32'><strong>External links:</strong> This website may contain links to third-party websites. These links are provided for convenience only. We do not control, endorse, or assume responsibility for the content, privacy policies, or practices of any third-party sites.</div>",
+                        "<strong>WhatsApp:</strong> Communication via WhatsApp is subject to Meta Platforms' terms of service and privacy policy. We are not responsible for data handling by Meta once a message leaves this website.",
+                        "<strong>Governing law:</strong> This disclaimer is governed by and construed in accordance with the laws of the State of Israel. Any dispute arising from this disclaimer shall be subject to the exclusive jurisdiction of the competent courts in Israel.",
+                        "<strong>Relationship to other policies:</strong> This disclaimer should be read together with our <a href='/privacy' class='text-gold hover:underline'>Privacy Policy</a>, <a href='/terms' class='text-gold hover:underline'>Terms of Service</a>, and <a href='/cookies' class='text-gold hover:underline'>Cookie Policy</a>. In the event of a conflict, the more specific policy shall prevail.",
+                        "<strong>Changes:</strong> We may update this disclaimer at any time. Any changes will be posted on this page with an updated revision date. Continued use of the website constitutes acceptance of the revised disclaimer."
+                    ],
+                    he: [
+                        "<div id='external' class='scroll-mt-32'><strong>קישורים חיצוניים:</strong> אתר זה עשוי להכיל קישורים לאתרי צד שלישי. קישורים אלו מסופקים לנוחות בלבד. איננו שולטים ב-, ממליצים על, או נושאים באחריות לתוכן, מדיניות הפרטיות או הנהלים של אתרי צד שלישי.</div>",
+                        "<strong>וואטסאפ:</strong> תקשורת באמצעות וואטסאפ כפופה לתנאי השימוש ומדיניות הפרטיות של Meta Platforms. איננו אחראים לטיפול בנתונים על ידי Meta לאחר שהודעה יוצאת מאתר זה.",
+                        "<strong>דין חל:</strong> הצהרה זו כפופה לחוקי מדינת ישראל ומתפרשת בהתאם להם. כל מחלוקת הנובעת מהצהרה זו תהיה כפופה לסמכות השיפוט הבלעדית של בתי המשפט המוסמכים בישראל.",
+                        "<strong>קשר למדיניויות אחרות:</strong> יש לקרוא הצהרה זו יחד עם <a href='/privacy' class='text-gold hover:underline'>מדיניות הפרטיות</a>, <a href='/terms' class='text-gold hover:underline'>תנאי השירות</a> ו<a href='/cookies' class='text-gold hover:underline'>מדיניות העוגיות</a> שלנו. במקרה של סתירה, המדיניות הספציפית יותר תגבר.",
+                        "<strong>שינויים:</strong> אנו רשאים לעדכן הצהרה זו בכל עת. כל שינוי יפורסם בדף זה עם תאריך עדכון מעודכן. המשך השימוש באתר מהווה הסכמה להצהרה המעודכנת."
+                    ]
                 },
-                services_label: { en: "Key Points", he: "נקודות עיקריות" },
+                services_label: { en: "External Links & Jurisdiction", he: "קישורים וסמכות שיפוט" },
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`
             }
         };
