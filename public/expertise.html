@@ -115,28 +115,37 @@
                 <a href="/#expertise" class="hover:text-gold transition" id="nav-expertise">תחומי עיסוק</a>
                 <a href="/#about" class="hover:text-gold transition" id="nav-philosophy">איך אני עובד</a>
             </div>
-            <div class="flex items-center gap-6">
-                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition" aria-label="Switch Language / החלף שפה">HE</button>
-                <a href="/#contact" class="bg-stone-900 text-white px-8 py-2 text-xs uppercase tracking-widest hover:bg-gold transition" id="nav-contact-button" data-t="nav_get_in_touch">Get in Touch</a>
+            <div class="flex items-center gap-4 md:gap-6">
+                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition px-3 py-2" aria-label="Switch Language / החלף שפה">HE</button>
+                <a href="/#contact" class="hidden md:inline-block bg-stone-900 text-white px-8 py-2 text-xs uppercase tracking-widest hover:bg-gold transition" id="nav-contact-button" data-t="nav_get_in_touch">Get in Touch</a>
+                <button id="mobile-menu-toggle" class="md:hidden p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-stone-200 px-6 py-6 space-y-4">
+            <a href="/#expertise" class="block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" id="mobile-nav-expertise">תחומי עיסוק</a>
+            <a href="/#about" class="block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" id="mobile-nav-philosophy">איך אני עובד</a>
+            <a href="/#contact" class="block bg-stone-900 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-gold transition text-center" id="mobile-nav-contact">Get in Touch</a>
         </div>
     </nav>
 
-    <main id="main-content" class="pt-48 pb-24">
+    <main id="main-content" class="pt-28 pb-12 md:pt-48 md:pb-24">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="grid lg:grid-cols-3 gap-8 md:gap-12 items-start">
                 <!-- Left Content Area (2 cols) -->
                 <div class="lg:col-span-2">
                     <div class="mb-12 rtl:text-right" id="expertise-header">
                         <div id="icon-container" class="mb-6 text-gold"></div>
-                        <h1 id="expertise-title" class="text-5xl md:text-7xl mb-6 leading-tight"></h1>
+                        <h1 id="expertise-title" class="text-3xl sm:text-5xl md:text-7xl mb-6 leading-tight"></h1>
                         <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
                         <div id="expertise-scope" class="mt-8 px-6 py-3 bg-stone-100 border-l-4 rtl:border-l-0 rtl:border-r-4 border-gold text-stone-600 font-semibold tracking-wide inline-block"></div>
                     </div>
 
                     <!-- New Sections for Criminal Law -->
                     <div id="criminal-sections" class="hidden space-y-16 mb-20">
-                        <div class="grid md:grid-cols-2 gap-12">
+                        <div class="grid md:grid-cols-2 gap-6 md:gap-12">
                             <div class="rtl:text-right">
                                 <h2 id="common-situations-title" class="text-3xl mb-6 text-stone-800 font-bold"></h2>
                                 <ul id="common-situations-list" class="space-y-4 text-stone-600"></ul>
@@ -163,8 +172,8 @@
                 </div>
 
                 <!-- Right Sidebar CTA Card -->
-                <div class="lg:col-span-1 sticky top-32">
-                    <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm text-center shadow-sm">
+                <div class="lg:col-span-1 lg:sticky lg:top-32">
+                    <div class="bg-stone-50 border border-stone-200 p-5 md:p-8 rounded-sm text-center shadow-sm">
                         <h3 class="text-2xl mb-4 font-bold" id="cta-title">Speak to a Lawyer</h3>
                         <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Send 2-3 sentences and I'll reply with next steps.</p>
                         <a href="/#contact" class="inline-block bg-gold text-stone-900 border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white hover:border-stone-900 transition w-full text-center" id="cta-button-secondary">Book a Consultation</a>
@@ -179,7 +188,7 @@
                     </div>
 
                     <!-- What happens next -->
-                    <div id="next-steps-section" class="mt-8 p-8 bg-stone-900 text-white rounded-sm rtl:text-right">
+                    <div id="next-steps-section" class="mt-8 p-5 md:p-8 bg-stone-900 text-white rounded-sm rtl:text-right">
                         <h4 class="text-xl font-bold mb-6 border-b border-stone-700 pb-4" id="next-steps-title">What happens next</h4>
                         <ol class="space-y-6">
                             <li class="flex gap-4 items-start">
@@ -211,11 +220,11 @@
     </main>
 
     <footer class="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
-        <div id="footer-container-expertise" class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-baseline gap-8">
+        <div id="footer-container-expertise" class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-baseline gap-4 md:gap-8">
             <div class="text-xs uppercase tracking-widest order-2 md:order-1 rtl:order-2" id="footer-copy-expertise"></div>
             <div id="footer-actions-expertise" class="flex flex-col md:flex-row items-baseline gap-8 order-1 md:order-2 rtl:order-1">
                 <button onclick="window.location.href='/'" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" id="footer-brand-expertise">ALON <span class="text-gold">PARDO</span></button>
-                <div class="text-xs uppercase tracking-widest rtl:space-x-reverse flex flex-wrap justify-center md:justify-end items-baseline gap-x-6 gap-y-2" id="footer-links-expertise">
+                <div class="text-xs uppercase tracking-widest rtl:space-x-reverse flex flex-wrap justify-center md:justify-end items-baseline gap-x-4 md:gap-x-6 gap-y-2" id="footer-links-expertise">
                     <a href="/privacy" class="hover:text-white transition" id="fl-privacy">Privacy Policy</a>
                     <a href="/terms" class="hover:text-white transition" id="fl-terms">Terms of Service</a>
                     <a href="/cookies" class="hover:text-white transition" id="fl-cookies">Cookie Policy</a>
@@ -1046,6 +1055,19 @@
             }
         };
 
+        // Mobile menu toggle
+        (function() {
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+            const iconPath = document.getElementById('menu-icon-path');
+            toggle.addEventListener('click', function() {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                toggle.setAttribute('aria-expanded', !isOpen);
+                iconPath.setAttribute('d', isOpen ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+            });
+        })();
+
         // Detect type from SEO-friendly URL path
         const pathToType = {
             '/practice/criminal-lawyer': 'criminal',
@@ -1079,6 +1101,9 @@
             document.getElementById('brand-link').innerHTML = content[lang].brand;
             document.getElementById('nav-expertise').textContent = content[lang].nav_expertise;
             document.getElementById('nav-philosophy').textContent = content[lang].nav_philosophy;
+            document.getElementById('mobile-nav-expertise').textContent = content[lang].nav_expertise;
+            document.getElementById('mobile-nav-philosophy').textContent = content[lang].nav_philosophy;
+            document.getElementById('mobile-nav-contact').textContent = content[lang].cta_button_nav;
 
             // Synchronize all links with the current language
             document.querySelectorAll('a').forEach(link => {

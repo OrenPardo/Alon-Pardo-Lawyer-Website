@@ -11,7 +11,11 @@ module.exports = {
     'text-[1.35rem]',
     'text-[1.75rem]',
     'text-[2.0rem]',
+    'text-[2.5rem]',
+    'text-[3.5rem]',
     'text-[4.5rem]',
+    'sm:text-[3.5rem]',
+    'md:text-[4.5rem]',
     'leading-none',
   ],
   theme: {
